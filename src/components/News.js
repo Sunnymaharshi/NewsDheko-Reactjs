@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import NewsItem from "./NewsItem";
 import Spinner from "./Spinner";
+import propTypes from "prop-types";
 
 export default class News extends Component {
   articles = [
@@ -283,8 +284,8 @@ export default class News extends Component {
         "SPOILER ALERT: This post includes some major reveals for the Season 1 finale of Showtime’s Yellowjackets, “Sic Transit Gloria Mundi.”\r\nJust when it seems Yellowjackets couldn’t get any more sinister … [+13834 chars]",
     },
   ];
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       // articles: [],
       articles: this.articles,
@@ -292,9 +293,25 @@ export default class News extends Component {
       page: 1,
       totalArticles: 0,
     };
+    document.title = `${this.capitalizeFirstLetter(
+      this.props.category
+    )} - News Dheko`;
   }
-  async componentDidMount() {
-    let url = `https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=8dc5aa5ac57d4be59c0d6b1608e4c8e2&page=1&pageSize=${this.props.pageSize}`;
+  capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+  static defaultProps = {
+    country: "in",
+    pageSize: 9,
+    category: "general",
+  };
+  static propTypes = {
+    country: propTypes.string,
+    pageSize: propTypes.number,
+    category: propTypes.string,
+  };
+  async updateNews() {
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=8dc5aa5ac57d4be59c0d6b1608e4c8e2&page=1&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -305,43 +322,65 @@ export default class News extends Component {
       loading: false,
     });
   }
+  async componentDidMount() {
+    this.updateNews();
+  }
 
   defaultUrl =
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6p-wtbH5WWOzY_5a4WmZFjLHXNLR1c4NKa2E0xt3cEv4Mm9mqHeSSKn1KbEdZvRXfnTU&usqp=CAU";
 
   handleNextClick = async () => {
-    let url = `https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=8dc5aa5ac57d4be59c0d6b1608e4c8e2&page=${
-      this.state.page + 1
-    }&pageSize=${this.props.pageSize}`;
-    this.setState({ loading: true });
-    let data = await fetch(url);
-    let parsedData = await data.json();
+    // let url = `https://newsapi.org/v2/top-headlines?country=${
+    //   this.props.country
+    // }&category=${
+    //   this.props.category
+    // }&apiKey=8dc5aa5ac57d4be59c0d6b1608e4c8e2&page=${
+    //   this.state.page + 1
+    // }&pageSize=${this.props.pageSize}`;
+    // this.setState({ loading: true });
+    // let data = await fetch(url);
+    // let parsedData = await data.json();
+
+    // this.setState({
+    //   articles: parsedData.articles,
+    //   page: this.state.page + 1,
+    //   loading: false,
+    // });
 
     this.setState({
-      articles: parsedData.articles,
       page: this.state.page + 1,
-      loading: false,
     });
+    this.updateNews();
   };
   handlePrevClick = async () => {
-    let url = `https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=8dc5aa5ac57d4be59c0d6b1608e4c8e2&page=${
-      this.state.page - 1
-    }&pageSize=${this.props.pageSize}`;
-    this.setState({ loading: true });
+    // let url = `https://newsapi.org/v2/top-headlines?country=${
+    //   this.props.country
+    // }&category=${
+    //   this.props.category
+    // }&apiKey=8dc5aa5ac57d4be59c0d6b1608e4c8e2&page=${
+    //   this.state.page - 1
+    // }&pageSize=${this.props.pageSize}`;
+    // this.setState({ loading: true });
 
-    let data = await fetch(url);
-    let parsedData = await data.json();
+    // let data = await fetch(url);
+    // let parsedData = await data.json();
 
+    // this.setState({
+    //   articles: parsedData.articles,
+    //   page: this.state.page - 1,
+    //   loading: false,
+    // });
     this.setState({
-      articles: parsedData.articles,
       page: this.state.page - 1,
-      loading: false,
     });
+    this.updateNews();
   };
   render() {
     return (
       <div className="container my-2">
-        <h1 className="text-center">Top Headlines</h1>
+        <h1 className="text-center">
+          Top {this.capitalizeFirstLetter(this.props.category)} Headlines
+        </h1>
         {this.state.loading && <Spinner />}
         <div className="row">
           {!this.state.loading &&
@@ -359,6 +398,9 @@ export default class News extends Component {
                       article.urlToImage ? article.urlToImage : this.defaultUrl
                     }
                     newsUrl={article.url}
+                    author={article.author ? article.author : "unknown"}
+                    date={article.publishedAt}
+                    source={article.source.name}
                   />
                 </div>
               );
