@@ -24,7 +24,6 @@ const News = (props) => {
     props.setProgress(40);
     let parsedData = await data.json();
     props.setProgress(70);
-
     setArticles(parsedData.articles);
     setTotalArticles(parsedData.totalResults);
     setLoading(false);
@@ -33,7 +32,7 @@ const News = (props) => {
   useEffect(() => {
     document.title = `${capitalizeFirstLetter(props.category)} - News Dheko`;
     updateNews();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // const handleNextClick = async () => {
   //   setPage(page + 1);
@@ -58,7 +57,11 @@ const News = (props) => {
   };
 
   return (
-    <>
+    <div
+      style={{
+        marginTop: "60px",
+      }}
+    >
       <h1 className="text-center">
         Top {capitalizeFirstLetter(props.category)} Headlines
       </h1>
@@ -95,7 +98,7 @@ const News = (props) => {
           </div>
         </div>
       </InfiniteScroll>
-    </>
+    </div>
   );
 };
 
