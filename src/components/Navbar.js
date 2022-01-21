@@ -1,14 +1,74 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import business from "../news-data/business";
+import entertainment from "../news-data/entertainment";
+import health from "../news-data/health";
+import sports from "./../news-data/sports";
+import general from "../news-data/general";
+import technology from "./../news-data/technology";
+import science from "./../news-data/science";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const update = (news) => {
+    setTimeout(() => {
+      props.setProgress(10);
+    }, 100);
+    setTimeout(() => {
+      props.setProgress(50);
+    }, 200);
+
+    props.setArticles(news);
+    console.log(news);
+    setTimeout(() => {
+      props.setProgress(70);
+    }, 200);
+    setTimeout(() => {
+      props.setProgress(100);
+    }, 300);
+    props.setLoading(false);
+  };
+  const setgeneral = () => {
+    update(general.articles);
+    document.title = "General - News Dheko";
+    props.setCategory("general");
+  };
+  const setentertainment = () => {
+    update(entertainment.articles);
+    document.title = "Entertainment - News Dheko";
+    props.setCategory("entertainment");
+  };
+  const sethealth = () => {
+    update(health.articles);
+    document.title = "Health - News Dheko";
+    props.setCategory("health");
+  };
+  const setsports = () => {
+    update(sports.articles);
+    document.title = "Sports - News Dheko";
+    props.setCategory("sports");
+  };
+  const settechnology = () => {
+    update(technology.articles);
+    document.title = "Technology - News Dheko";
+    props.setCategory("technology");
+  };
+  const setbusiness = () => {
+    update(business.articles);
+    document.title = "Business - News Dheko";
+
+    props.setCategory("business");
+  };
+  const setscience = () => {
+    update(science.articles);
+    document.title = "Science - News Dheko";
+    props.setCategory("science");
+  };
   return (
     <div>
       <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
+          <a className="navbar-brand" href="#">
             News Dekho
-          </Link>
+          </a>
           <button
             className="navbar-toggler"
             type="button"
@@ -23,44 +83,57 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">
+                <a
+                  className="nav-link active"
+                  aria-current="page"
+                  href="#general"
+                  onClick={setgeneral}
+                >
                   My News
-                </Link>
+                </a>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/business">
+                <a className="nav-link" href="#business" onClick={setbusiness}>
                   business
-                </Link>
+                </a>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/entertainment">
+                <a
+                  className="nav-link"
+                  href="#entertainment"
+                  onClick={setentertainment}
+                >
                   entertainment
-                </Link>
+                </a>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/general">
+                <a className="nav-link" href="#general" onClick={setgeneral}>
                   general
-                </Link>
+                </a>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/health">
+                <a className="nav-link" href="#health" onClick={sethealth}>
                   health
-                </Link>
+                </a>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/science">
+                <a className="nav-link" href="#science" onClick={setscience}>
                   science
-                </Link>
+                </a>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/sports">
+                <a className="nav-link" href="#sports" onClick={setsports}>
                   sports
-                </Link>
+                </a>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/technology">
+                <a
+                  className="nav-link"
+                  href="#technology"
+                  onClick={settechnology}
+                >
                   technology
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
