@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/static/js/main.384f5985.js",
-    "static/media/loading.gif": "/static/media/loading.d3fbaf2b81fd92c49692.gif",
-    "index.html": "/index.html",
-    "main.384f5985.js.map": "/static/js/main.384f5985.js.map"
+    "main.js": "/NewsDheko-Reactjs/static/js/main.752809d2.js",
+    "static/media/loading.gif": "/NewsDheko-Reactjs/static/media/loading.d3fbaf2b81fd92c49692.gif",
+    "index.html": "/NewsDheko-Reactjs/index.html",
+    "main.752809d2.js.map": "/NewsDheko-Reactjs/static/js/main.752809d2.js.map"
   },
   "entrypoints": [
-    "static/js/main.384f5985.js"
+    "static/js/main.752809d2.js"
   ]
 }
