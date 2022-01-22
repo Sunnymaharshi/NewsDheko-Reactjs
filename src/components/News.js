@@ -11,11 +11,11 @@ const News = (props) => {
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6p-wtbH5WWOzY_5a4WmZFjLHXNLR1c4NKa2E0xt3cEv4Mm9mqHeSSKn1KbEdZvRXfnTU&usqp=CAU";
 
   const update = () => {
-    document.title = `${capitalizeFirstLetter(props.category)} - News Dheko`;
+    document.title = "Home - News Dheko";
   };
   useEffect(() => {
     update();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div

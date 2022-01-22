@@ -14,7 +14,7 @@ const Navbar = (props) => {
     }, 100);
     setTimeout(() => {
       props.setProgress(50);
-    }, 200);
+    }, 100);
 
     props.setArticles(news);
     console.log(news);
@@ -66,7 +66,7 @@ const Navbar = (props) => {
     <div>
       <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="#home">
             News Dekho
           </a>
           <button

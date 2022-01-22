@@ -18,7 +18,7 @@ const App = () => {
         setArticles={setArticles}
         category={category}
       />
-      <LoadingBar color="#f11946" progress={progress} height={3} />
+      <LoadingBar color="#f11946" progress={progress} height={2} />
       <News loading={loading} articles={articles} category={category} />
     </>
   );
