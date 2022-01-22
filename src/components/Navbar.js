@@ -9,21 +9,21 @@ import science from "./../news-data/science";
 
 const Navbar = (props) => {
   const update = (news) => {
+    window.scrollTo(0, 0);
     setTimeout(() => {
-      props.setProgress(10);
+      props.setProgress(20);
     }, 100);
     setTimeout(() => {
-      props.setProgress(50);
+      props.setProgress(60);
     }, 100);
 
-    props.setArticles(news);
-    console.log(news);
     setTimeout(() => {
-      props.setProgress(70);
-    }, 200);
-    setTimeout(() => {
+      props.setArticles(news);
+      props.setFixed(news);
       props.setProgress(100);
-    }, 300);
+      console.log(props.articles);
+    }, 700);
+
     props.setLoading(false);
   };
   const setgeneral = () => {

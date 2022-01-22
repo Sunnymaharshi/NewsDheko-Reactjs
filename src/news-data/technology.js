@@ -44,6 +44,7 @@ const technology = {
       content:
         "iPhone 11 offers another great deal! After being around for three years, the iPhone 11 is still a good deal for those looking to get into the iPhone world. A great screen, commendable battery life, t… [+1887 chars]",
     },
+
     {
       source: { id: null, name: "India Today" },
       author: null,
@@ -85,6 +86,8 @@ const technology = {
       content:
         "Instagram has expanded support for its Remix' feature for Reels to any video shared on the platform, allowing users to create a response video to regular videos on the service. The Remix feature will… [+2272 chars]",
     },
+  ],
+  articles2: [
     {
       source: { id: null, name: "NDTV News" },
       author: "David Delima",

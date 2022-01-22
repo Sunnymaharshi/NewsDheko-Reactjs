@@ -44,6 +44,7 @@ const general = {
       content:
         "India vs South Africa, 2nd ODI, Live Score: After losing wickets of Shikhar Dhawan and Virat Kohli in quick succession, India captain KL Rahul and wicket-keeper batter Rishabh Pant have added over 10… [+946 chars]",
     },
+
     {
       source: { id: null, name: "NDTV News" },
       author: null,
@@ -86,6 +87,8 @@ const general = {
       content:
         "After Budget 2020 was blown apart in a couple of months by the onset of the coronavirus pandemic, Finance Minister Nirmala Sitharaman was fully prepared the next year, presenting a package focused on… [+6527 chars]",
     },
+  ],
+  articles2: [
     {
       source: { id: null, name: "Livemint" },
       author: "Livemint",

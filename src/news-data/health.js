@@ -44,6 +44,7 @@ const health = {
       content:
         'Health experts are now warning that Antimicrobial Resistance (AMR) poses a major threat to humanity based on a report that found that the "superbug" infections claimed the lives of nearly 1.2 million… [+2557 chars]',
     },
+
     {
       source: { id: "the-times-of-india", name: "The Times of India" },
       author: "TIMESOFINDIA.COM",
@@ -82,6 +83,8 @@ const health = {
       content:
         "The Omicron Covid-19 variant, first detected on November 24, 2021, in South Africa, has been spreading rapidly around the globe. It is also driving the present third wave of the pandemic in India. Wh… [+2199 chars]",
     },
+  ],
+  articles2: [
     {
       source: { id: null, name: "Telangana Today" },
       author: null,

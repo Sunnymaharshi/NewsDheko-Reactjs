@@ -16,6 +16,7 @@ const business = {
       content:
         "Persistent Systems, Mphasis shares rise after December quarter earnings\r\n--Persistent Systems reported a net profit of Rs 176.4 crore for the December quarter, up 9.1 percent on a year-on-year basis.… [+873 chars]",
     },
+
     {
       source: { id: null, name: "Moneycontrol" },
       author: null,
@@ -44,6 +45,7 @@ const business = {
       content:
         "Hindustan Zinc today reported consolidated net profit of 2,701 crore for the December quarter, which is 23% higher than 2,200 crore reported in the last year period.\r\nOn a sequential basis, the profi… [+910 chars]",
     },
+
     {
       source: { id: null, name: "NDTV News" },
       author: null,
@@ -72,6 +74,7 @@ const business = {
       content:
         "HDFC Life Insurance on January 21 reported a 3.3 percent year-on-year growth in profit after tax to Rs 273.7 crore for the quarter ended December.\r\nThe life insurer's net premium income rose 27.8 per… [+947 chars]",
     },
+
     {
       source: { id: null, name: "CryptoPotato" },
       author: "George Georgiev",
@@ -86,6 +89,8 @@ const business = {
       content:
         "Bitcoin’s price took a beating in the past few hours. Everything was seemingly going well over the past few days. BTC surged to a high above $43K yesterday, and it was testing the major resistance ar… [+2749 chars]",
     },
+  ],
+  articles2: [
     {
       source: { id: null, name: "Moneycontrol" },
       author: null,

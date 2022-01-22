@@ -43,6 +43,7 @@ const entertainment = {
       content:
         "Actor Shammi Kapoor and his kids were left heartbroken at the death of his wife, actor Geeta Bali in 1965. Geeta, one of India's first female superstars, was enjoying great success at the movies, whe… [+2288 chars]",
     },
+
     {
       source: { id: null, name: "Hindustan Times" },
       author: "HT Entertainment Desk",
@@ -85,6 +86,8 @@ const entertainment = {
       content:
         "In the recent episode of Bigg Boss 15, it was seen that Nishant Bhat wins the task and earns the Ticket to Finale. As he gets the star, he enjoys the moment by himself as he sits alone. Pratik Sehajp… [+1514 chars]",
     },
+  ],
+  articles2: [
     {
       source: { id: null, name: "India Today" },
       author: null,

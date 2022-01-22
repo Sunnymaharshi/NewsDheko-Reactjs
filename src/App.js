@@ -9,18 +9,28 @@ const App = () => {
   const [articles, setArticles] = useState(general.articles);
   const [loading, setLoading] = useState(false);
   const [category, setCategory] = useState("general");
+  const [fixed, setFixed] = useState(general.articles);
   return (
-    <>
+    <div>
       <Navbar
         setLoading={setLoading}
         setProgress={setProgress}
         setCategory={setCategory}
         setArticles={setArticles}
+        setFixed={setFixed}
         category={category}
+        fixed={fixed}
       />
       <LoadingBar color="#f11946" progress={progress} height={2} />
-      <News loading={loading} articles={articles} category={category} />
-    </>
+      <News
+        loading={loading}
+        articles={articles}
+        category={category}
+        setProgress={setProgress}
+        setArticles={setArticles}
+        fixed={fixed}
+      />
+    </div>
   );
 };
 

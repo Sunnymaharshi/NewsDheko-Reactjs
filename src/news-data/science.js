@@ -44,6 +44,7 @@ const science = {
       content:
         "A recent research based on Hubble Space Telescope findings showed that black holes could go against their all-absorbing nature at times and may aid creation. The research showed a supermassive black … [+1506 chars]",
     },
+
     {
       source: { id: null, name: "Sambadenglish.com" },
       author: "Sambad English Bureau",
@@ -86,6 +87,8 @@ const science = {
       content:
         'Scientists report that they have built a living "minimal cell" with a genome stripped down to its barest essentials – and a computer model of the cell that mirrors its behavior. By refining and testi… [+4230 chars]',
     },
+  ],
+  articles2: [
     {
       source: { id: null, name: "Space Ref" },
       author: null,
